@@ -5,7 +5,7 @@ module.exports = function (req, res, next) {
 
   res.on('finish', () => {
     const currentTime = new Date().toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' })
-    console.log(`${currentTime} | GET from ${url} | total time: ${Date.now() - reqTime}ms`)
+    console.log(`${currentTime} | ${req.method} from ${url} | total time: ${Date.now() - reqTime}ms`)
   })
 
   return next()
